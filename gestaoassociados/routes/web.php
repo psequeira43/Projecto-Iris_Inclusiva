@@ -1,17 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AssociadosController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +12,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/get/associado/lista',
+        [AssociadosController::class, 'getListaAssociados'])->name('associado.lista');
+
+ Route::post('/get/individual/associado/detalhes',
+        [AssociadosController::class, 'getAssociadosDetalhes'])->name('associado.detalhes');
+
+Route::post('/update/associado/data',
+        [AssociadosController::class, 'updateAssociadoData']);
+
+Route::delete('/delete/associado/data/{associado}',
+        [AssociadosController::class, 'destroy']);
+
+Route::post('/store/associado/data',
+        [AssociadosController::class, 'store']);
