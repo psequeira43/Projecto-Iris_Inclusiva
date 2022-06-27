@@ -11,7 +11,7 @@ class UpdateModal extends Component {
 
         this.state = {
             associadoNome: null,
-            associadoassociadoNmrAssociado: null,
+            associadoNmrAssociado: null,
         }
     }
 

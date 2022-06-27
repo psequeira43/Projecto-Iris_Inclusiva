@@ -20,7 +20,7 @@ Route::get('/get/associado/lista',
         [AssociadosController::class, 'getAssociadosDetalhes'])->name('associado.detalhes');
 
 Route::post('/update/associado/data',
-        [AssociadosController::class, 'updateAssociadoData']);
+        [AssociadosController::class, 'updateassociadoData']);
 
 Route::delete('/delete/associado/data/{associado}',
         [AssociadosController::class, 'destroy']);

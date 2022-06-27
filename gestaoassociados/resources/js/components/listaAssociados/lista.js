@@ -39,7 +39,7 @@ class Lista extends Component {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
-                        <table className="table table-dark table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                 <th scope="col" width="100px">#</th>

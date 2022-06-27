@@ -5816,23 +5816,23 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
 
-    _defineProperty(_assertThisInitialized(_this), "inputNomeAssociado", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "inputassociadoNome", function (event) {
       _this.setState({
-        nomeAssociado: event.target.value
+        associadoNome: event.target.value
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "inputNmrAssociado", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "inputassociadoNmrAssociado", function (event) {
       _this.setState({
-        nmrAssociado: event.target.value
+        associadoNmrAssociado: event.target.value
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "updateassociadoData", function () {
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update/associado/data', {
         associadoId: _this.props.modalId,
-        nomeAssociado: _this.state.nomeAssociado,
-        nmrAssociado: _this.state.nmrAssociado
+        associadoNome: _this.state.associadoNome,
+        associadoNmrAssociado: _this.state.associadoNmrAssociado
       }).then(function () {
         react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success("Associado editado com sucesso!");
         setTimeout(function () {
@@ -5842,8 +5842,8 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
     });
 
     _this.state = {
-      nomeAssociado: null,
-      nmrAssociado: null
+      associadoNome: null,
+      associadoNmrAssociado: null
     };
     return _this;
   } // modificar o nome do associado.
@@ -5852,7 +5852,7 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
   _createClass(UpdateModal, [{
     key: "render",
     value: function render() {
-      var _this$state$nomeAssoc, _this$state$nmrAssoci;
+      var _this$state$associado, _this$state$associado2;
 
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "modal fade",
@@ -5884,19 +5884,19 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
                   className: "form-group",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                     type: "text",
-                    id: "nomeAssociado",
+                    id: "associadoNome",
                     className: "form-control mb-3",
-                    value: (_this$state$nomeAssoc = this.state.nomeAssociado) !== null && _this$state$nomeAssoc !== void 0 ? _this$state$nomeAssoc : "",
-                    onChange: this.inputNomeAssociado
+                    value: (_this$state$associado = this.state.associadoNome) !== null && _this$state$associado !== void 0 ? _this$state$associado : "",
+                    onChange: this.inputassociadoNome
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "form-group",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                     type: "text",
-                    id: "nmrAssociado",
+                    id: "associadoNmrAssociado",
                     className: "form-control mb-3",
-                    value: (_this$state$nmrAssoci = this.state.nmrAssociado) !== null && _this$state$nmrAssoci !== void 0 ? _this$state$nmrAssoci : "",
-                    onChange: this.inputNmrAssociado
+                    value: (_this$state$associado2 = this.state.associadoNmrAssociado) !== null && _this$state$associado2 !== void 0 ? _this$state$associado2 : "",
+                    onChange: this.inputassociadoNmrAssociado
                   })
                 })]
               })
@@ -5922,30 +5922,29 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props, current_state) {
       var associadoUpdate = {
-        nomeAssociado: null,
-        nmrAssociado: null
+        associadoNome: null,
+        associadoNmrAssociado: null
       }; // Updating data from input.
 
-      if (current_state.nomeAssociado && current_state.nomeAssociado !== props.associadoData.currentnomeAssociado) {
+      if (current_state.associadoNome && current_state.associadoNome !== props.associadoData.currentassociadoNome) {
         return null;
       }
 
-      if (current_state.nmrAssociado && current_state.nmrAssociado !== props.associadoData.currentnmrAssociado) {
+      if (current_state.associadoNmrAssociado && current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado) {
         return null;
       } // Updating data from props Below.
 
 
-      if (current_state.nomeAssociado !== props.associadoData.currentnomeAssociado || current_state.nomeAssociado === props.associadoData.currentnomeAssociado) {
-        associadoUpdate.nomeAssociado = props.associadoData.currentnomeAssociado;
+      if (current_state.associadoNome !== props.associadoData.currentassociadoNome || current_state.associadoNome === props.associadoData.currentassociadoNome) {
+        associadoUpdate.associadoNome = props.associadoData.currentassociadoNome;
       }
 
-      if (current_state.nmrAssociado !== props.associadoData.currentnmrAssociado || current_state.nmrAssociado === props.associadoData.currentnmrAssociado) {
-        associadoUpdate.nmrAssociado = props.associadoData.currentnmrAssociado;
+      if (current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado || current_state.associadoNmrAssociado === props.associadoData.currentassociadoNmrAssociado) {
+        associadoUpdate.associadoNmrAssociado = props.associadoData.currentassociadoNmrAssociado;
       }
 
       return associadoUpdate;
-    } // Updating employee data.
-
+    }
   }]);
 
   return UpdateModal;
@@ -6033,6 +6032,7 @@ var ViewModal = /*#__PURE__*/function (_Component) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
               className: "modal-body",
               children: ["Nome: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
+                "text-color": "black",
                 children: [this.props.associadoData.currentNomeAssociado, " "]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), "N\xFAmero de S\xF3cio: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
                 children: [this.props.associadoData.currentNumeroAssociado, " "]
@@ -6372,7 +6372,7 @@ var Lista = /*#__PURE__*/function (_Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "card",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
-                className: "table table-dark table-striped",
+                className: "table table-striped",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("thead", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
