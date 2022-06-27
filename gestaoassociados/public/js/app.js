@@ -5846,7 +5846,7 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
       associadoNmrAssociado: null
     };
     return _this;
-  } // modificar o nome do associado.
+  } // Updating associado name state.
 
 
   _createClass(UpdateModal, [{
@@ -5905,7 +5905,7 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
                 type: "submit",
                 className: "btn btn-info",
-                value: "Update",
+                value: "Editar",
                 onClick: this.updateassociadoData
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                 type: "button",
@@ -5926,25 +5926,26 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
         associadoNmrAssociado: null
       }; // Updating data from input.
 
-      if (current_state.associadoNome && current_state.associadoNome !== props.associadoData.currentassociadoNome) {
+      if (current_state.associadoNome && current_state.associadoNome !== props.associadoData.currentNomeAssociado) {
         return null;
       }
 
-      if (current_state.associadoNmrAssociado && current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado) {
+      if (current_state.associadoNmrAssociado && current_state.associadoNmrAssociado !== props.associadoData.currentNumeroAssociado) {
         return null;
       } // Updating data from props Below.
 
 
-      if (current_state.associadoNome !== props.associadoData.currentassociadoNome || current_state.associadoNome === props.associadoData.currentassociadoNome) {
-        associadoUpdate.associadoNome = props.associadoData.currentassociadoNome;
+      if (current_state.associadoNome !== props.associadoData.currentNomeAssociado || current_state.associadoNome === props.associadoData.currentNomeAssociado) {
+        associadoUpdate.associadoNome = props.associadoData.currentNomeAssociado;
       }
 
-      if (current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado || current_state.associadoNmrAssociado === props.associadoData.currentassociadoNmrAssociado) {
-        associadoUpdate.associadoNmrAssociado = props.associadoData.currentassociadoNmrAssociado;
+      if (current_state.associadoNmrAssociado !== props.associadoData.currentNumeroAssociado || current_state.associadoNmrAssociado === props.associadoData.currentNumeroAssociado) {
+        associadoUpdate.associadoNmrAssociado = props.associadoData.currentNumeroAssociado;
       }
 
       return associadoUpdate;
-    }
+    } // Updating associado data.
+
   }]);
 
   return UpdateModal;

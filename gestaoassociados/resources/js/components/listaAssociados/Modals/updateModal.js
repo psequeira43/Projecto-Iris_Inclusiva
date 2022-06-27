@@ -15,7 +15,7 @@ class UpdateModal extends Component {
         }
     }
 
-    // modificar o nome do associado.
+    // Updating associado name state.
 
     inputassociadoNome = (event) => {
         this.setState({
@@ -23,7 +23,7 @@ class UpdateModal extends Component {
         });
     }
 
-    // modificar o nmr do associado.
+    // Update associado number state.
 
     inputassociadoNmrAssociado = (event) => {
         this.setState({
@@ -42,11 +42,11 @@ class UpdateModal extends Component {
 
         // Updating data from input.
 
-        if (current_state.associadoNome && (current_state.associadoNome !== props.associadoData.currentassociadoNome)) {
+        if (current_state.associadoNome && (current_state.associadoNome !== props.associadoData.currentNomeAssociado)) {
             return null;
         }
 
-        if (current_state.associadoNmrAssociado && (current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado)) {
+        if (current_state.associadoNmrAssociado && (current_state.associadoNmrAssociado !== props.associadoData.currentNumeroAssociado)) {
             return null;
         }
 
@@ -54,21 +54,21 @@ class UpdateModal extends Component {
 
         // Updating data from props Below.
 
-        if (current_state.associadoNome !== props.associadoData.currentassociadoNome ||
-            current_state.associadoNome === props.associadoData.currentassociadoNome) {
-            associadoUpdate.associadoNome = props.associadoData.currentassociadoNome;
+        if (current_state.associadoNome !== props.associadoData.currentNomeAssociado ||
+            current_state.associadoNome === props.associadoData.currentNomeAssociado) {
+            associadoUpdate.associadoNome = props.associadoData.currentNomeAssociado;
         }
 
-        if (current_state.associadoNmrAssociado !== props.associadoData.currentassociadoNmrAssociado ||
-            current_state.associadoNmrAssociado === props.associadoData.currentassociadoNmrAssociado) {
-            associadoUpdate.associadoNmrAssociado = props.associadoData.currentassociadoNmrAssociado;
+        if (current_state.associadoNmrAssociado !== props.associadoData.currentNumeroAssociado ||
+            current_state.associadoNmrAssociado === props.associadoData.currentNumeroAssociado) {
+            associadoUpdate.associadoNmrAssociado = props.associadoData.currentNumeroAssociado;
         }
 
         return associadoUpdate;
 
     }
 
-  
+    // Updating associado data.
     updateassociadoData = () => {
         axios.post('/update/associado/data', {
             associadoId: this.props.modalId,
@@ -115,7 +115,7 @@ class UpdateModal extends Component {
                         <div className="modal-footer">
                             <input type="submit"
                                 className="btn btn-info"
-                                value="Update"
+                                value="Editar"
                                 onClick={this.updateassociadoData}
                             />
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

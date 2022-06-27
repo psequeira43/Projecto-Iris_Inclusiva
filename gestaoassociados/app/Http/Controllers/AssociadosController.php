@@ -41,13 +41,14 @@ class AssociadosController extends Controller
     {
         try
         {
+
             $associadoId           = $request->get('associadoId'); 
             $associadoNome         = $request->get('associadoNome'); 
             $associadoNmrAssociado = $request->get('associadoNmrAssociado');       
 
             Associado::where('id', $associadoId)->update([
-                'associadoNome' => $associadoNome,
-                'associadoNmrAssociado'  => $associadoNmrAssociado
+                'nome_associado' => $associadoNome,
+                'nmr_associado'  => $associadoNmrAssociado
             ]);
 
             return response()->json([

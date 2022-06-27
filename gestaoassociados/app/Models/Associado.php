@@ -13,4 +13,5 @@ class Associado extends Model
         'nome_associado',
         'nmr_associado',
     ];
+
 }
