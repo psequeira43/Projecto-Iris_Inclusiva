@@ -41,7 +41,6 @@ class AssociadosController extends Controller
     {
         try
         {
-
             $associadoId           = $request->get('associadoId'); 
             $associadoNome         = $request->get('associadoNome'); 
             $associadoNmrAssociado = $request->get('associadoNmrAssociado');       
